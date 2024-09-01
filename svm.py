@@ -63,7 +63,7 @@ X_train,X_test,Y_train,Y_test = train_test_split(images,signal,train_size=train_
 C_vals = np.logspace(-5,4,10)
 
 
-"""#rbf kernel
+#rbf kernel
 
 gamma_vals = np.logspace(-5,4,10)
 
@@ -94,10 +94,10 @@ ax.set_xticks(np.arange(0,len(gamma_vals))+0.5,labels = gamma_vals)
 ax.set_yticks(np.arange(0,len(C_vals))+0.5,labels = C_vals)
 save_fig("Test Accuracy SVM")
 plt.show()
-"""
 
 
-"""#polynomial kernel
+
+#polynomial kernel
 
 poly_vals = np.arange(3,7)
 
@@ -115,10 +115,10 @@ for i,poly_deg in enumerate(poly_vals):
 
 maximum_params = unravel_index(accuracy_scores.argmax(),accuracy_scores.shape)
 print("Best case scenario is -> C: ", C_vals[maximum_params[1]],"  Degree: ", poly_vals[maximum_params[0]],"  with test accuracy: ", np.max(accuracy_scores))
-"""
 
 
-"""#linear kernel
+
+#linear kernel
 
 linear_scores = np.zeros(len(C_vals))
 for j,C in enumerate(C_vals):
@@ -132,4 +132,4 @@ for j,C in enumerate(C_vals):
 
 print("Accuracy score for linear kernel -> ", np.max(linear_scores))
 print("\nFor C val -> ", C_vals[np.argmax(linear_scores)])
-"""
+
